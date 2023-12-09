@@ -1,8 +1,12 @@
 package com.example.scaapi.model.entity;
 
+import com.example.scaapi.api.dto.JogadorDto;
+import com.example.scaapi.model.repository.PosicaoRepository;
+import com.example.scaapi.service.PosicaoService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
