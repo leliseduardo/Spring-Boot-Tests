@@ -177,5 +177,205 @@ class JogadorServiceTest {
             assertEquals("CPF inválido", e.getMessage());
         }
     }
+
+    @Test
+    void verificaValidarComTelefoneNull(){
+        try {
+            jogador.setTelefone(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Telefone inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComTelefoneVazio(){
+        try {
+            jogador.setTelefone("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Telefone inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComLogradouroNull(){
+        try {
+            jogador.setLogradouro(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Logradouro inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComLogradouroVazio(){
+        try {
+            jogador.setLogradouro("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Logradouro inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComNumeroNull(){
+        try {
+            jogador.setNumero(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Número inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComNumeroZero(){
+        try {
+            jogador.setNumero(0);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Número inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComBairroNull(){
+        try {
+            jogador.setBairro(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Bairro inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComBairroVazio(){
+        try {
+            jogador.setBairro("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Bairro inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComCidadeNull(){
+        try {
+            jogador.setCidade(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Cidade inválida", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComCidadeVazia(){
+        try {
+            jogador.setCidade("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Cidade inválida", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComEstadoNull(){
+        try {
+            jogador.setEstado(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Estado inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComEstadoVazio(){
+        try {
+            jogador.setEstado("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Estado inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComCepNull(){
+        try {
+            jogador.setCep(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("CEP inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComCepVazio(){
+        try {
+            jogador.setCep("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("CEP inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComNacionalidadeNull(){
+        try {
+            jogador.setNacionalidade(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Nacionalidade inválida", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComNacionalidadeVazia(){
+        try {
+            jogador.setNacionalidade("");
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Nacionalidade inválida", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComAlturaNull(){
+        try {
+            jogador.setAltura(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Altura inválida", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComAlturaZero(){
+        try {
+            jogador.setAltura((float)0);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Altura inválida", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComPesoNull(){
+        try {
+            jogador.setPeso(null);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Peso inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    void verificaValidarComPesoZero(){
+        try {
+            jogador.setPeso((float)0);
+            jogadorService.validar(jogador);
+        } catch (RegraNegocioException e){
+            assertEquals("Peso inválido", e.getMessage());
+        }
+    }
 }
 
