@@ -1,0 +1,190 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MedicoService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.scaapi.service</a>
+</div>
+
+<h1>Coverage Summary for Class: MedicoService (com.example.scaapi.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MedicoService</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.scaapi.service;
+&nbsp;
+&nbsp;import com.example.scaapi.exception.RegraNegocioException;
+&nbsp;import com.example.scaapi.model.entity.Medico;
+&nbsp;import com.example.scaapi.model.repository.MedicoRepository;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;import org.springframework.transaction.annotation.Transactional;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Objects;
+&nbsp;import java.util.Optional;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class MedicoService {
+&nbsp;
+&nbsp;    private MedicoRepository repository;
+&nbsp;
+<b class="nc">&nbsp;    public MedicoService(MedicoRepository repository) {</b>
+<b class="nc">&nbsp;        this.repository = repository;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Medico&gt; getMedicos() {
+<b class="nc">&nbsp;        return this.repository.findAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Optional&lt;Medico&gt; getMedicoById(Long id) {
+<b class="nc">&nbsp;        return this.repository.findById(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Transactional
+&nbsp;    public Medico salvar(Medico medico) {
+<b class="nc">&nbsp;        validar(medico);</b>
+<b class="nc">&nbsp;        return repository.save(medico);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Transactional
+&nbsp;    public void excluir(Medico medico) {
+<b class="nc">&nbsp;        Objects.requireNonNull(medico.getId());</b>
+<b class="nc">&nbsp;        repository.delete(medico);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void validar(Medico medico) {
+<b class="nc">&nbsp;        if (medico.getNome() == null || medico.getNome().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Nome inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getEmail() == null || medico.getEmail().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;E-mail inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getCpf() == null || medico.getCpf().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;CPF inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getTelefone() == null || medico.getTelefone().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Telefone inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getLogradouro() == null || medico.getLogradouro().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Logradouro inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getNumero() == null || medico.getNumero() == 0) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Número inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getBairro() == null || medico.getBairro().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Bairro inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getCidade() == null || medico.getCidade().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Cidade inválida&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getEstado() == null || medico.getEstado().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Estado inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getCep() == null || medico.getCep().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;CEP inválido&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (medico.getRegistro() == null || medico.getRegistro().trim().equals(&quot;&quot;)) {</b>
+<b class="nc">&nbsp;            throw new RegraNegocioException(&quot;Registro inválido&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-09 17:00</div>
+</div>
+</body>
+</html>

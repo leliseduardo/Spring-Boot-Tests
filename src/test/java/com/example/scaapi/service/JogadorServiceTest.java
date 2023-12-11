@@ -123,6 +123,7 @@ class JogadorServiceTest {
         try {
             jogador.setNome(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Nome inválido", e.getMessage());
         }
@@ -133,6 +134,7 @@ class JogadorServiceTest {
         try {
             jogador.setNome("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Nome inválido", e.getMessage());
         }
@@ -143,6 +145,7 @@ class JogadorServiceTest {
         try {
             jogador.setEmail(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("E-mail inválido", e.getMessage());
         }
@@ -153,6 +156,7 @@ class JogadorServiceTest {
         try {
             jogador.setEmail("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("E-mail inválido", e.getMessage());
         }
@@ -163,6 +167,7 @@ class JogadorServiceTest {
         try {
             jogador.setCpf(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("CPF inválido", e.getMessage());
         }
@@ -173,6 +178,7 @@ class JogadorServiceTest {
         try {
             jogador.setCpf("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("CPF inválido", e.getMessage());
         }
@@ -183,6 +189,7 @@ class JogadorServiceTest {
         try {
             jogador.setTelefone(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Telefone inválido", e.getMessage());
         }
@@ -193,6 +200,7 @@ class JogadorServiceTest {
         try {
             jogador.setTelefone("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Telefone inválido", e.getMessage());
         }
@@ -203,6 +211,7 @@ class JogadorServiceTest {
         try {
             jogador.setLogradouro(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Logradouro inválido", e.getMessage());
         }
@@ -213,6 +222,7 @@ class JogadorServiceTest {
         try {
             jogador.setLogradouro("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Logradouro inválido", e.getMessage());
         }
@@ -223,6 +233,7 @@ class JogadorServiceTest {
         try {
             jogador.setNumero(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Número inválido", e.getMessage());
         }
@@ -233,6 +244,7 @@ class JogadorServiceTest {
         try {
             jogador.setNumero(0);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Número inválido", e.getMessage());
         }
@@ -243,6 +255,7 @@ class JogadorServiceTest {
         try {
             jogador.setBairro(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Bairro inválido", e.getMessage());
         }
@@ -253,6 +266,7 @@ class JogadorServiceTest {
         try {
             jogador.setBairro("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Bairro inválido", e.getMessage());
         }
@@ -263,6 +277,7 @@ class JogadorServiceTest {
         try {
             jogador.setCidade(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Cidade inválida", e.getMessage());
         }
@@ -273,6 +288,7 @@ class JogadorServiceTest {
         try {
             jogador.setCidade("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Cidade inválida", e.getMessage());
         }
@@ -283,6 +299,7 @@ class JogadorServiceTest {
         try {
             jogador.setEstado(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Estado inválido", e.getMessage());
         }
@@ -293,6 +310,7 @@ class JogadorServiceTest {
         try {
             jogador.setEstado("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Estado inválido", e.getMessage());
         }
@@ -303,6 +321,7 @@ class JogadorServiceTest {
         try {
             jogador.setCep(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("CEP inválido", e.getMessage());
         }
@@ -313,6 +332,7 @@ class JogadorServiceTest {
         try {
             jogador.setCep("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("CEP inválido", e.getMessage());
         }
@@ -323,6 +343,7 @@ class JogadorServiceTest {
         try {
             jogador.setNacionalidade(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Nacionalidade inválida", e.getMessage());
         }
@@ -333,6 +354,7 @@ class JogadorServiceTest {
         try {
             jogador.setNacionalidade("");
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Nacionalidade inválida", e.getMessage());
         }
@@ -343,6 +365,7 @@ class JogadorServiceTest {
         try {
             jogador.setAltura(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Altura inválida", e.getMessage());
         }
@@ -353,6 +376,7 @@ class JogadorServiceTest {
         try {
             jogador.setAltura((float)0);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Altura inválida", e.getMessage());
         }
@@ -363,6 +387,7 @@ class JogadorServiceTest {
         try {
             jogador.setPeso(null);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Peso inválido", e.getMessage());
         }
@@ -373,6 +398,7 @@ class JogadorServiceTest {
         try {
             jogador.setPeso((float)0);
             jogadorService.validar(jogador);
+            fail();
         } catch (RegraNegocioException e){
             assertEquals("Peso inválido", e.getMessage());
         }
